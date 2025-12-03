@@ -34,13 +34,6 @@
 - Si Ollama no está activo, los botones de mejora con IA mostrarán estados de carga y restaurarán el texto original en caso de error
 - Los datos del CV se guardan en localStorage para recuperar tu borrador
 
-🌐 Publicación en GitHub
-- Opción manual:
-  - `git init && git add . && git commit -m "Inicial: Curritravi (React + Vite)"`
-  - `git branch -M main`
-  - `git remote add origin https://github.com/usuario/repositorio.git`
-  - `git push -u origin main`
-
 📜 Licencia
 - Este proyecto está bajo licencia MIT (archivo `LICENSE`). Permite uso, modificación y distribución incluso comercial, sin garantías.
 
