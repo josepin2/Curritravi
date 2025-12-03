@@ -35,9 +35,6 @@ Notas
 - Los datos del CV se guardan en localStorage para recuperar tu borrador
 
 Publicación en GitHub
-- Opción script (Windows): `publish_curritravi.bat https://github.com/usuario/repositorio.git`
-  - Repositorio vacío (sin README) previamente creado en tu GitHub
-  - Realiza init, commit, set `main`, añade remoto y hace push
 - Opción manual:
   - `git init && git add . && git commit -m "Inicial: Curritravi (React + Vite)"`
   - `git branch -M main`
