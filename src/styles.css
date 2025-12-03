@@ -1,0 +1,155 @@
+:root {
+  --bg: #0b1020;
+  --surface: #121a33;
+  --surface-2: #0e162b;
+  --text: #e7ecff;
+  --muted: #a9b3d9;
+  --primary: #6ea8fe;
+  --primary-600: #3d7bfd;
+  --border: #243055;
+}
+
+* { box-sizing: border-box }
+html, body, #root { height: 100% }
+body {
+  margin: 0;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  background: linear-gradient(180deg, var(--bg), #0c1430 40%, #0a1329);
+  color: var(--text);
+}
+html { scroll-behavior: smooth }
+
+.app { max-width: 1200px; margin: 0 auto; padding: 24px }
+.app-header { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; }
+.app-header h1 { margin: 0; font-size: 28px }
+.app-header p { margin: 0; color: var(--muted) }
+.header-actions { display: flex; gap: 8px }
+/* tabs removidos */
+
+.btn { appearance: none; border: 1px solid var(--border); background: var(--surface); color: var(--text); padding: 10px 14px; border-radius: 10px; cursor: pointer }
+.btn:hover { background: var(--surface-2) }
+.btn.primary { background: linear-gradient(180deg, var(--primary), var(--primary-600)); border: none; color: #fff }
+.btn.primary:hover { filter: brightness(1.05) }
+
+.grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 16px }
+@media (min-width: 980px) { .grid { grid-template-columns: 1fr 1fr } }
+
+.card { background: radial-gradient(1200px 400px at 50% -50%, rgba(110,168,254,0.12), transparent 60%), var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 16px }
+.card h2 { margin-top: 0; font-size: 20px }
+
+.form { display: grid; gap: 12px }
+.grid-2 { grid-template-columns: 1fr }
+@media (min-width: 680px) { .grid-2 { grid-template-columns: 1fr 1fr } }
+.grid-full { grid-column: 1/-1 }
+
+label { display: grid; gap: 8px; font-size: 14px }
+input, textarea { width: 100%; background: var(--surface-2); border: 1px solid var(--border); color: var(--text); border-radius: 10px; padding: 10px 12px; outline: none; font-size: 16px; line-height: 1.5 }
+input:focus, textarea:focus { box-shadow: 0 0 0 3px rgba(61, 123, 253, 0.35); border-color: var(--primary-600) }
+input::placeholder, textarea::placeholder { color: #7d8ab8 }
+textarea { resize: vertical }
+
+.preview { overflow: auto }
+.cv { background: #fff; color: #111827; border-radius: 12px; padding: 16px; box-shadow: 0 20px 50px rgba(0,0,0,0.25) }
+.card.preview { display: flex; justify-content: center }
+.cv-page { width: 794px; height: 1123px; max-width: 100%; margin: 0 auto }
+.cv-header { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; border-bottom: 2px solid #e5e7eb; padding-bottom: 10px; margin-bottom: 16px }
+.cv-header h2 { margin: 0 }
+.cv-section { margin-top: 14px }
+.cv-section h3 { margin: 0 0 8px 0; color: #374151 }
+.muted { color: #6b7280 }
+
+.app-footer { margin-top: 24px; color: var(--muted); font-size: 13px; text-align: center; padding: 14px; border-top: 1px solid var(--border); background: linear-gradient(180deg, rgba(110,168,254,0.12), transparent 60%) }
+
+@media (max-width: 520px) {
+  .app { padding: 16px }
+  .app-header { gap: 8px }
+  .header-actions { width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 8px }
+  .btn { padding: 12px }
+  /* barra móvil removida */
+}
+
+@page { size: A4; margin: 6mm 8mm 10mm 8mm }
+@media print {
+  html, body { background: #fff !important }
+  body.only-cv .app-header,
+  body.only-cv .card:not(.preview),
+  body.only-cv .app-footer { display: none !important }
+  body.only-cv .card { border: none !important }
+  body.only-cv .mobile-bar { display: none !important }
+  body.only-cv .card.preview { border: none; padding: 0; box-shadow: none }
+  body.only-cv .cv { padding: 0mm 3mm 8mm 3mm !important; border-radius: 0; background: #fff !important; box-shadow: none !important }
+  body.only-cv .cv { font-size: 14px; line-height: 1.45 }
+  body.only-cv .identity h1 { font-size: 26px }
+  body.only-cv .identity .subtitle { font-size: 13px }
+  body.only-cv .cv-main .section h2 { font-size: 16px }
+  .cv-page { max-width: none }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact }
+  body.only-cv .card,
+  body.only-cv .card.preview,
+  body.only-cv .cv,
+  body.only-cv .cv-page { border: none !important; outline: none !important; box-shadow: none !important }
+  body.only-cv .cv *,
+  body.only-cv .cv-header,
+  body.only-cv .cv-header-elegant,
+  body.only-cv .cv-section,
+  body.only-cv .list,
+  body.only-cv .row { border: none !important; outline: none !important; box-shadow: none !important }
+  body.only-cv .cv,
+  body.only-cv .cv-page { border: 1px solid transparent !important; background-clip: padding-box !important }
+  /* Paginación y cortes limpios */
+  body.only-cv .cv-page { width: auto !important; height: auto !important }
+  body.only-cv .cv, body.only-cv .cv-page { break-inside: auto; page-break-inside: auto }
+  body.only-cv .cv-header-elegant { page-break-after: avoid }
+  body.only-cv .cv-section { break-inside: avoid; page-break-inside: avoid }
+  body.only-cv .cv-sidebar .block { break-inside: avoid; page-break-inside: avoid }
+  body.only-cv .list li { break-inside: avoid; page-break-inside: avoid }
+  body.only-cv .cv-section h2 { page-break-after: avoid }
+}
+  body.only-cv .cv *,
+  body.only-cv .cv-header,
+  body.only-cv .cv-header-elegant { border: none !important; outline: none !important }
+  body.only-cv .timeline li::before,
+  body.only-cv .timeline li::after { display: none !important }
+}
+
+.cv-elegant { --accent: #3d7bfd }
+.cv-header-elegant { display: grid; grid-template-columns: 100px 1fr; align-items: center; gap: 16px; border-bottom: 4px solid var(--accent); padding-bottom: 16px; margin-bottom: 16px }
+.avatar { width: 100px; height: 100px; border-radius: 50%; overflow: hidden; border: 4px solid var(--accent); background: #f3f4f6 }
+.avatar img { width: 100%; height: 100%; object-fit: cover }
+.avatar-empty { width: 100%; height: 100%; background: linear-gradient(135deg, #e5e7eb, #f3f4f6) }
+.identity h1 { margin: 0; font-size: 28px }
+.identity .subtitle { color: #4b5563; font-weight: 500 }
+
+.cv-body { display: grid; grid-template-columns: 30% 1fr; gap: 16px }
+.cv-sidebar .block { margin-bottom: 16px }
+.block-title { font-weight: 700; color: var(--accent); margin-bottom: 8px }
+.skills { display: flex; gap: 8px; flex-wrap: wrap }
+.skill-pill { background: color-mix(in oklab, var(--accent) 16%, white); color: #1e293b; padding: 6px 10px; border-radius: 999px; border: 1px solid color-mix(in oklab, var(--accent) 30%, white) }
+
+.cv-main .section { margin-bottom: 16px }
+.cv-main .section h2 { margin: 0 0 8px 0; color: var(--accent) }
+.list { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px }
+.timeline li { position: relative; padding-left: 16px }
+.timeline li::before { content: ''; position: absolute; left: 2px; top: 0.45em; width: 6px; height: 6px; border-radius: 50%; background: var(--accent) }
+.timeline li::after { content: ''; position: absolute; left: 4px; top: 1.2em; width: 2px; bottom: -12px; background: #e5e7eb }
+.timeline li:last-child::after { display: none }
+.row { display: flex; justify-content: space-between; align-items: baseline }
+.role { color: #111827; font-weight: 600 }
+.desc { color: #4b5563 }
+
+@media (max-width: 780px) {
+  .cv-body { grid-template-columns: 1fr }
+  .cv-page { width: 100%; height: auto; aspect-ratio: 210 / 297 }
+}
+
+.cv-minimal .cv-header-elegant { border-bottom-color: transparent; padding-bottom: 0; margin-bottom: 8px }
+.cv-minimal .identity h1 { font-size: 30px }
+.cv-minimal .cv-body { gap: 12px }
+.cv-minimal .block-title, .cv-minimal .cv-main .section h2 { color: #1f2937 }
+.cv-minimal .skill-pill { background: #f8fafc; border-color: #e5e7eb }
+
+.cv-classic .cv-body { grid-template-columns: 30% 1fr }
+.cv-classic .cv-sidebar { background: color-mix(in oklab, var(--accent) 8%, white); border: 1px solid color-mix(in oklab, var(--accent) 20%, white); padding: 12px; border-radius: 8px }
+.cv-classic .block-title { color: #1f2937 }
+.cv-classic .cv-main .section h2 { color: var(--accent) }
+
