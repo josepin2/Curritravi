@@ -178,13 +178,36 @@ export default function CVForm() {
         <AvatarUpload />
         <AccentPicker />
         <TemplatePicker />
-
+      </div>
+    </section>
+    <section className="card" id="carnet">
+      <h2>Carnet de conducir</h2>
+      <div className="form grid-2">
+        <Text label="Tipo de carnet" name="driversLicense" placeholder="Ej. B, A2, C1" />
+        <label>
+          Nota
+          <div className="muted">Puedes escribir varios: "B, A2"</div>
+        </label>
+      </div>
+    </section>
+    <section className="card" id="habilidades">
+      <h2>Habilidades</h2>
+      <div className="form">
         <ListSkills />
+      </div>
+    </section>
+    <section className="card" id="experiencia">
+      <h2>Experiencia</h2>
+      <div className="form">
         <SectionExperience />
+      </div>
+    </section>
+    <section className="card" id="educacion">
+      <h2>Educación</h2>
+      <div className="form">
         <SectionEducation />
       </div>
     </section>
-    
     </>
   )
 }

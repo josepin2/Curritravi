@@ -28,18 +28,28 @@ function Shell() {
 
   return (
     <div className="app">
-      <header className="app-header">
-        <h1>Curritravi</h1>
-        <p>Genera tu currículum de forma rápida y atractiva</p>
-        <div className="header-actions">
-          <button className="btn" onClick={resetAll}>Reiniciar</button>
-          <button className="btn primary" onClick={handlePrint}>Exportar PDF</button>
-        </div>
-      </header>
-      <main className="grid">
-        <CVForm />
-        <CVPreview ref={printRef} />
-      </main>
+      <div className="layout">
+        <aside className="sidebar">
+          <div className="brand">Curritravi</div>
+          <nav className="nav">
+            <a href="#datos">Datos</a>
+            <a href="#carnet">Carnet</a>
+            <a href="#habilidades">Habilidades</a>
+            <a href="#experiencia">Experiencia</a>
+            <a href="#educacion">Educación</a>
+          </nav>
+          <div className="sidebar-actions">
+            <button className="btn" onClick={resetAll}>Reiniciar</button>
+            <button className="btn primary" onClick={handlePrint}>Exportar PDF</button>
+          </div>
+        </aside>
+        <section className="content">
+          <CVForm />
+          <div className="print-only">
+            <CVPreview ref={printRef} />
+          </div>
+        </section>
+      </div>
       <footer className="app-footer">Creación de José M.C · 2026 · Todos los derechos reservados</footer>
     </div>
   )

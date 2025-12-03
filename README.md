@@ -43,3 +43,11 @@
 
 📜 Licencia
 - Este proyecto está bajo licencia MIT (archivo `LICENSE`). Permite uso, modificación y distribución incluso comercial, sin garantías.
+
+🆕 Novedades (UI + experiencia)
+- Nuevo layout con sidebar y navegación por secciones.
+- Previsualización eliminada de la pantalla; el CV solo se genera al imprimir.
+- Sección “Carnet de conducir” en el formulario y reflejada en el CV.
+- Paleta profesional (oscuro elegante) con acentos por tarjeta para separación visual.
+- Impresión en A4 más robusta: ancho físico, márgenes seguros y rotura de palabras.
+- Documentación con emojis y guía de publicación simplificada.

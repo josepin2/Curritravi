@@ -32,6 +32,12 @@ export default forwardRef<HTMLDivElement, {}>(function CVPreview(_, ref) {
                 ))}
               </div>
             </div>
+            {data.driversLicense && (
+              <div className="block">
+                <div className="block-title">Carnet de conducir</div>
+                <div className="muted">{data.driversLicense}</div>
+              </div>
+            )}
             {data.skills.length > 0 && (
               <div className="block">
                 <div className="block-title">Habilidades</div>

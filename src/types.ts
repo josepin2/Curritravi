@@ -24,6 +24,7 @@ export type CVData = {
   photo?: string
   accent?: string
   template?: 'elegant' | 'minimal' | 'classic'
+  driversLicense?: string
   skills: string[]
   experience: Experience[]
   education: Education[]
@@ -40,6 +41,7 @@ export const emptyCV: CVData = {
   photo: '',
   accent: '#3d7bfd',
   template: 'elegant',
+  driversLicense: '',
   skills: [],
   experience: [],
   education: [],
