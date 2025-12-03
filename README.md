@@ -40,3 +40,6 @@ Publicación en GitHub
   - `git branch -M main`
   - `git remote add origin https://github.com/usuario/repositorio.git`
   - `git push -u origin main`
+
+Licencia
+- Este proyecto está bajo licencia MIT (archivo `LICENSE`). Permite uso, modificación y distribución incluso comercial, sin garantías.
