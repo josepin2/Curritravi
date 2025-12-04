@@ -44,13 +44,13 @@ function ListSkills() {
     <div className="grid-full">
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         <h3 style={{ margin: '8px 0' }}>Habilidades</h3>
-        <button className="btn" type="button" onClick={addSkill}>Añadir</button>
+        <button className="btn success" type="button" onClick={addSkill}>Añadir</button>
       </div>
       {data.skills.length === 0 && <div className="muted">Sin habilidades todavía</div>}
       {data.skills.map((skill, i) => (
         <div key={i} style={{ display: 'flex', gap: 8, marginBottom: 8 }}>
           <input value={skill} placeholder="Ej. React" onChange={(e) => updateSkill(i, e.target.value)} />
-          <button className="btn" type="button" onClick={() => removeSkill(i)}>Quitar</button>
+          <button className="btn danger" type="button" onClick={() => removeSkill(i)}>Quitar</button>
         </div>
       ))}
     </div>
@@ -79,7 +79,7 @@ function SectionExperience() {
     <div className="grid-full">
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         <h3 style={{ margin: '8px 0' }}>Experiencia</h3>
-        <button className="btn" type="button" onClick={add}>Añadir</button>
+        <button className="btn success" type="button" onClick={add}>Añadir</button>
       </div>
       {data.experience.length === 0 && <div className="muted">Sin experiencias todavía</div>}
       {data.experience.map((e, i) => (
@@ -104,15 +104,15 @@ function SectionExperience() {
             <label className="grid-full">
               Descripción
               <textarea rows={3} value={e.description} onChange={(ev) => update(i, { description: ev.target.value })} />
-              <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: 8 }}>
-                <button className="btn" type="button" disabled={e.description === 'Mejorando con IA…'} onClick={() => improve(i)}>
+              <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: 12 }}>
+                <button className="btn ai" type="button" disabled={e.description === 'Mejorando con IA…'} onClick={() => improve(i)}>
                   {e.description === 'Mejorando con IA…' ? 'Mejorando…' : 'Mejorar con IA'}
                 </button>
               </div>
             </label>
           </div>
-          <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-            <button className="btn" type="button" onClick={() => remove(i)}>Eliminar</button>
+          <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: 12 }}>
+            <button className="btn danger" type="button" onClick={() => remove(i)}>Eliminar</button>
           </div>
         </div>
       ))}
@@ -129,7 +129,7 @@ function SectionEducation() {
     <div className="grid-full">
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         <h3 style={{ margin: '8px 0' }}>Educación</h3>
-        <button className="btn" type="button" onClick={add}>Añadir</button>
+        <button className="btn success" type="button" onClick={add}>Añadir</button>
       </div>
       {data.education.length === 0 && <div className="muted">Sin educación registrada</div>}
       {data.education.map((e, i) => (
@@ -153,7 +153,7 @@ function SectionEducation() {
             </label>
           </div>
           <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-            <button className="btn" type="button" onClick={() => remove(i)}>Eliminar</button>
+            <button className="btn danger" type="button" onClick={() => remove(i)}>Eliminar</button>
           </div>
         </div>
       ))}
@@ -229,8 +229,8 @@ function SmartSummary() {
     <label className="grid-full">
       Resumen
       <textarea rows={4} placeholder="Breve descripción profesional" value={data.summary} onChange={(e) => setData({ ...data, summary: e.target.value })} />
-      <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: 8 }}>
-        <button className="btn" type="button" disabled={data.summary === 'Mejorando con IA…'} onClick={improve}>
+      <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: 12 }}>
+        <button className="btn ai" type="button" disabled={data.summary === 'Mejorando con IA…'} onClick={improve}>
           {data.summary === 'Mejorando con IA…' ? 'Mejorando…' : 'Mejorar con IA'}
         </button>
       </div>
